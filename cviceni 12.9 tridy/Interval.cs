@@ -23,6 +23,15 @@ namespace cviceni_12._9_tridy
                 horni = value; 
             }
         }
-
+        public bool UpravMeze(int dolni, int horni)
+        {
+            if(horni < dolni)
+            {
+                return false;
+            }
+            this.dolni = dolni;
+            this.horni = horni;
+            return true;
+        }
     }
 }
