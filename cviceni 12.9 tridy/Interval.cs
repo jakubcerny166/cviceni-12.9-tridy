@@ -16,11 +16,11 @@ namespace cviceni_12._9_tridy
             get { return horni; }
             set
             {
-                if(value < dolni)
+                if (value < dolni)
                 {
                     throw new Exception("horni nemuze byt mensi nez dolni");
                 }
-                horni = value; 
+                horni = value;
             }
         }
 
@@ -36,9 +36,20 @@ namespace cviceni_12._9_tridy
                 dolni = value;
             }
         }
-        public bool UpravMeze(int dolni, int horni)
+
+        public Interval(int horni, int dolni)
         {
             if(horni < dolni)
+            {
+                throw new Exception("nejde takto udelat");
+            }
+            this.horni = horni; 
+            this.dolni = dolni;
+        }
+
+        public bool UpravMeze(int dolni, int horni)
+        {
+            if (horni < dolni)
             {
                 return false;
             }
@@ -46,5 +57,13 @@ namespace cviceni_12._9_tridy
             this.horni = horni;
             return true;
         }
+        public Interval? Prunik(Interval i1, Interval i2)
+        {
+            if(i1.dolni < i2.dolni)
+            {
+
+            }
+        }
     }
+    
 }
