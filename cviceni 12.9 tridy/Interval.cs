@@ -23,6 +23,19 @@ namespace cviceni_12._9_tridy
                 horni = value; 
             }
         }
+
+        public int Dolni
+        {
+            get { return dolni; }
+            set
+            {
+                if (value > horni)
+                {
+                    throw new Exception("dolni nemuze byt vetsi nez horni");
+                }
+                dolni = value;
+            }
+        }
         public bool UpravMeze(int dolni, int horni)
         {
             if(horni < dolni)
